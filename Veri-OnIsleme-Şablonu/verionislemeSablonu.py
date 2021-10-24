@@ -35,6 +35,11 @@ le=preprocessing.LabelEncoder()
 ulke[:,0]=le.fit_transform(veriler.iloc[:,0])
 print(ulke)
 
+
+#Kategorik verileri topluca Numeric verilere çevirme
+from sklearn.preprocessing import LabelEncoder
+veriler = veriler.apply(LabelEncoder().fit_transform)
+
 #1-0-0 :OneHotEncoder() 
 ohe=preprocessing.OneHotEncoder()
 ulke=ohe.fit_transform(ulke).toarray()
