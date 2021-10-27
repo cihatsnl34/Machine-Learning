@@ -104,5 +104,15 @@ r_dt.fit(X,Y)
 plt.scatter(X,Y,color='red')
 plt.plot(X,r_dt.predict(X),color='yellow')
 plt.show()
+
 print(r_dt.predict([[11]]))
 print(r_dt.predict([[6.6]]))
+
+#RASSAL AĞAÇLAR(RANDOM FOREST)
+
+from sklearn.ensemble import RandomForestRegressor
+rf_reg=RandomForestRegressor(n_estimators=10,random_state=0)
+rf_reg.fit(X,Y.ravel())
+print(rf_reg.predict([[6.6]]))
+plt.scatter(X,Y,color='red')
+plt.plot(X,rf_reg.predict(X),color='yellow')
