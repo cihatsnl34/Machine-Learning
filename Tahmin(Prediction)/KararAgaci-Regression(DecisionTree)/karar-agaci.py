@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Oct 26 16:01:45 2021
+Created on Wed Oct 27 18:29:05 2021
 
 @author: cihat
 """
@@ -83,6 +83,8 @@ x_olcekli= sc1.fit_transform(X)
 sc2=StandardScaler()
 y_olcekli= sc2.fit_transform(Y)
 
+
+#SVR ALGORİTMASI
 from sklearn.svm import SVR
 svr_reg=SVR(kernel='rbf')
 svr_reg.fit(x_olcekli,y_olcekli)
@@ -90,6 +92,17 @@ svr_reg.fit(x_olcekli,y_olcekli)
 
 plt.scatter(x_olcekli,y_olcekli, color='red')
 plt.plot(x_olcekli,svr_reg.predict(x_olcekli),color='blue')
-
+plt.show()
 print(svr_reg.predict([[11]]))
 print(svr_reg.predict([[6.6]]))
+
+#KARAR AGACI ALGORİTMASI (DECİSİON TREE)
+
+from sklearn.tree import DecisionTreeRegressor
+r_dt=DecisionTreeRegressor(random_state=0)
+r_dt.fit(X,Y)
+plt.scatter(X,Y,color='red')
+plt.plot(X,r_dt.predict(X),color='yellow')
+
+print(r_dt.predict([[11]]))
+print(r_dt.predict([[6.6]]))
