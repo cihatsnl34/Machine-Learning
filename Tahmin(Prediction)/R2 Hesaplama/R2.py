@@ -118,7 +118,3 @@ print(rf_reg.predict([[6.6]]))
 plt.scatter(X,Y,color='red')
 plt.plot(X,rf_reg.predict(X),color='yellow')
 
-#R2 SCORE
-from sklearn.metrics import r2_score
-print('Random Forest R2 Değeri')
-print(r2_score(Y,rf_reg.predict(X)))
