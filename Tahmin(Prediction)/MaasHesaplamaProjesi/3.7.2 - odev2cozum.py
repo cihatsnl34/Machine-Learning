@@ -13,7 +13,7 @@ from sklearn.metrics import r2_score
 import statsmodels.api as sm
 # veri yukleme
 veriler = pd.read_csv('maaslar_yeni.csv')
-
+print(veriler.corr())
 x = veriler.iloc[:,2:5]
 y = veriler.iloc[:,5:]
 X = x.values

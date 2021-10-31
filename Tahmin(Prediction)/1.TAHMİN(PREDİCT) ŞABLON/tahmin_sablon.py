@@ -12,7 +12,9 @@ import pandas as pd
 from sklearn.metrics import r2_score
 # veri yukleme
 veriler = pd.read_csv('maaslar.csv')
-
+#Maaşı en çok etkileyen veye etkilemeyeni gösteren fonksiyon
+#Columnlar arası bağı gösteriyor
+print(veriler.corr())
 #Data frame dilimleme (slice)
 x = veriler.iloc[:,1:2]
 y = veriler.iloc[:,2:]
