@@ -107,5 +107,5 @@ print(r2_score(Y,dc_reg.predict(X)))
 print("RANDOM FOREST R2")
 print(r2_score(Y,rf_reg.predict(X)))
 
-print(lin_reg.predict([[5,10,100]]))
+print(lin_reg.predict([[10,10,100]]))
 
