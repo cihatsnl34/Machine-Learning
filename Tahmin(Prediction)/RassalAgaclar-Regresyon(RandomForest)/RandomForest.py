@@ -114,7 +114,7 @@ print(r_dt.predict([[6.6]]))
 from sklearn.ensemble import RandomForestRegressor
 rf_reg=RandomForestRegressor(n_estimators=10,random_state=0)
 rf_reg.fit(X,Y.ravel())
-print(rf_reg.predict([[6.6]]))
+print(rf_reg.predict([[11]]))
 plt.scatter(X,Y,color='red')
 plt.plot(X,rf_reg.predict(X),color='yellow')
 

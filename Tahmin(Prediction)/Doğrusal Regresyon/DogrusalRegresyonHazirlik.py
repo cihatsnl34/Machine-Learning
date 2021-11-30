@@ -50,7 +50,7 @@ tahmin=lr.predict(x_test)
 x_train=x_train.sort_index()
 y_train=y_train.sort_index()
 #Basit Doğrusal Regresyon Görselleştirilmesi(Grafik)
-plt.plot(x_train,y_train)
+plt.scatter(x_train,y_train)
 plt.plot(x_test,lr.predict(x_test))
 
 

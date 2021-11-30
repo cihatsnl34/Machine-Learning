@@ -41,7 +41,7 @@ print(r2_score(Y, lin_reg.predict(X)))
 
 
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(degree = 4)#Polinom Derece
+poly_reg = PolynomialFeatures(degree = 3)#Polinom Derece
 x_poly = poly_reg.fit_transform(X)
 lin_reg2 = LinearRegression()
 lin_reg2.fit(x_poly,y)

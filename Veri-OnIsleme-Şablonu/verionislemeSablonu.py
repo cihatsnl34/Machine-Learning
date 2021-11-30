@@ -26,7 +26,7 @@ Yas[:,1:4]=imputer.transform(Yas[:,1:4])
 print(Yas)
 
 #Encoder:Kategorik -> Numeric
-#
+
 ulke=veriler.iloc[:,0:1].values
 print(ulke)
 from sklearn import preprocessing
@@ -37,8 +37,8 @@ print(ulke)
 
 
 #Kategorik verileri topluca Numeric verilere çevirme
-from sklearn.preprocessing import LabelEncoder
-veriler = veriler.apply(LabelEncoder().fit_transform)
+#from sklearn.preprocessing import LabelEncoder
+#veriler = veriler.apply(LabelEncoder().fit_transform)
 
 #1-0-0 :OneHotEncoder() 
 ohe=preprocessing.OneHotEncoder()
@@ -75,3 +75,5 @@ from sklearn.preprocessing import StandardScaler
 sc=StandardScaler()
 X_train= sc.fit_transform(x_train)
 X_test= sc.fit_transform(x_test)
+
+
