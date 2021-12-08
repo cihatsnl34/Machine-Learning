@@ -29,14 +29,13 @@ sc=StandardScaler()
 X_train= sc.fit_transform(x_train)
 X_test= sc.fit_transform(x_test)
 
+from sklearn.svm import SVC
+svc=SVC(kernel='rbf')
+svc.fit(X_train, y_train)
+y_pred=svc.predict(X_test)
 
-from sklearn.linear_model import LogisticRegression
-logr=LogisticRegression(random_state=0)
-logr.fit(x_train,y_train)
-y_pred=logr.predict(x_test)
-print(y_pred)
-print(y_test)
-print(logr.predict([[176,67,21]]))
+
+
 #CONFUSION MATRIX
 
 from sklearn.metrics import confusion_matrix
