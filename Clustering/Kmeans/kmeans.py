@@ -30,4 +30,17 @@ for i in range(1,10):
     sonuclar.append(kmeans.inertia_)
 plt.plot(range(1,10), sonuclar)"""
 #Hangi sınıfta olduğunu buluyoruz burada
-print(kmeans.predict([[60000,1000]]))
+y_pred=kmeans.predict(X)
+print(kmeans.predict([[143500,8650]]))
+#Kümelerin grafikleştirilmesi
+label=kmeans.fit_predict(X)
+u_labels = np.unique(label)
+ 
+#plotting the results:
+ 
+for i in u_labels:
+    plt.scatter(X[label == i , 0] , X[label == i , 1] , label = i)
+
+#legend : grafikle ilgili bilgi verir Şu renk=1 dir gibi
+plt.legend()
+plt.show()
