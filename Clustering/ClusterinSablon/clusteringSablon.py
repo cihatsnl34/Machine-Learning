@@ -13,8 +13,9 @@ veriler = pd.read_csv("musteriler.csv")
 
 X=veriler.iloc[:,3:].values
 
-#KMEANS CLUSTERİNS (EN YAKIN KOMŞU CLUSTERİNG KNN)
+#KMEANS CLUSTERİNS
 from sklearn.cluster import KMeans
+#n_clusters=kaç kümeye ayıracağımızı söylüyoruz
 kmeans=KMeans(n_clusters=4,init='k-means++')
 
 kmeans.fit(X)
@@ -43,6 +44,7 @@ for i in u_labels:
     plt.scatter(X[label == i , 0] , X[label == i , 1] , label = i)
 
 #legend : grafikle ilgili bilgi verir Şu renk=1 dir gibi
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s = 300, c = 'yellow', label = 'Centroids')
 plt.legend()
 plt.show()
 #AGGLOMEATİVE CLUSTERİNG (Hiyerarşik Bölütleme)  

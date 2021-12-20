@@ -10,7 +10,7 @@ Created on Sat Oct 16 23:30:46 2021
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
 #2.veri onisleme
 #2.1.veri yukleme
 veriler = pd.read_csv('veriler.csv')
@@ -45,10 +45,13 @@ print(y_pred)
 print(y_test)
 
 #Confusuion_Matrix
-from sklearn.metrics import confusion_matrix
+
 cm = confusion_matrix(y_test,y_pred)
 print(cm)
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 
 #KNN Classification
 
@@ -61,10 +64,15 @@ knn = KNeighborsClassifier(n_neighbors=1, metric='minkowski')
 knn.fit(X_train,y_train)
 
 y_pred = knn.predict(X_test)
-
+"""
+print(classifier.predict(sc.transform([[30,87000]])))
+"""
 cm = confusion_matrix(y_test,y_pred)
 print(cm)
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 
 #SVM Classification
 from sklearn.svm import SVC
@@ -76,8 +84,10 @@ y_pred = svc.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 print('SVC')
 print(cm)
-
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 #Naive Bayes Classification
 
 #1.Gaussion Naive Bayes
@@ -103,7 +113,10 @@ y_pred = gnb.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 print('GNB')
 print(cm)
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 
 #Decision Tree Classification
 
@@ -120,7 +133,10 @@ y_pred = dtc.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 print('DTC')
 print(cm)
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 #Random Forest Classification
 
 #default olarak gini fonksiyonunu alır logaritma hesabını
@@ -135,7 +151,10 @@ y_pred = rfc.predict(X_test)
 cm = confusion_matrix(y_test,y_pred)
 print('RFC')
 print(cm)
-
+print("ACC")
+print(accuracy_score(y_test, y_pred))
+print("F2 Score")
+print(f1_score(y_test, y_pred))
 
     
 # 7. ROC , TPR, FPR değerleri 
