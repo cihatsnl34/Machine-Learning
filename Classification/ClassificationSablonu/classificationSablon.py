@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
+import pandas_profiling
 #2.veri onisleme
 #2.1.veri yukleme
 veriler = pd.read_csv('veriler.csv')
@@ -21,7 +22,8 @@ print(veriler)
 x = veriler.iloc[:,1:4].values #bağımsız değişkenler
 y = veriler.iloc[:,4:].values #bağımlı değişken
 print(y)
-
+#Dataset hakkında rapor veriyor.
+print(veriler.profile_report())
 #verilerin egitim ve test icin bolunmesi
 from sklearn.model_selection import train_test_split
 
