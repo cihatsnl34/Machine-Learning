@@ -23,7 +23,7 @@ x = veriler.iloc[:,1:4].values #bağımsız değişkenler
 y = veriler.iloc[:,4:].values #bağımlı değişken
 print(y)
 #Dataset hakkında rapor veriyor.
-print(veriler.profile_report())
+#print(veriler.profile_report())
 #verilerin egitim ve test icin bolunmesi
 from sklearn.model_selection import train_test_split
 
@@ -53,7 +53,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 
 #KNN Classification
 
@@ -74,7 +74,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 
 #SVM Classification
 from sklearn.svm import SVC
@@ -89,7 +89,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 #Naive Bayes Classification
 
 #1.Gaussion Naive Bayes
@@ -118,7 +118,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 
 #Decision Tree Classification
 
@@ -138,7 +138,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 #Random Forest Classification
 
 #default olarak gini fonksiyonunu alır logaritma hesabını
@@ -156,7 +156,7 @@ print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
 print("F2 Score")
-print(f1_score(y_test, y_pred))
+print(f1_score(y_test, y_pred, average=None))
 
     
 # 7. ROC , TPR, FPR değerleri 
