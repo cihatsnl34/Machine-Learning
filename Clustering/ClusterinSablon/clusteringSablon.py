@@ -38,7 +38,6 @@ print(kmeans.predict([[143500,8650]]))
 label=kmeans.fit_predict(X)
 #kaç tane gruba ayırdığımızı u_labels objesine atıyoruz
 u_labels = np.unique(label)
- 
 #plotting the results:
  
 for i in u_labels:

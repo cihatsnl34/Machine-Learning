@@ -21,7 +21,6 @@ print(veriler)
 
 x = veriler.iloc[:,1:4].values #bağımsız değişkenler
 y = veriler.iloc[:,4:].values #bağımlı değişken
-print(y)
 #Dataset hakkında rapor veriyor.
 #print(veriler.profile_report())
 #verilerin egitim ve test icin bolunmesi
@@ -43,8 +42,6 @@ logr = LogisticRegression(random_state=0)
 logr.fit(X_train,y_train)
 
 y_pred = logr.predict(X_test)
-print(y_pred)
-print(y_test)
 
 #Confusuion_Matrix
 
@@ -52,7 +49,7 @@ cm = confusion_matrix(y_test,y_pred)
 print(cm)
 print("ACC")
 print(accuracy_score(y_test, y_pred))
-print("F2 Score")
+print("F1 Score")
 print(f1_score(y_test, y_pred, average=None))
 
 #KNN Classification
@@ -69,6 +66,7 @@ y_pred = knn.predict(X_test)
 """
 print(classifier.predict(sc.transform([[30,87000]])))
 """
+print("KNN")
 cm = confusion_matrix(y_test,y_pred)
 print(cm)
 print("ACC")
@@ -106,8 +104,8 @@ print(f1_score(y_test, y_pred, average=None))
 #erkek mi kadın mı ,sigara içiyor mu içmiyor mu gibi
 #bernoulli naive bayesi kullanırız
 
-from sklearn.naive_bayes import GaussianNB
-gnb = GaussianNB()
+from sklearn.naive_bayes import BernoulliNB
+gnb = BernoulliNB()
 gnb.fit(X_train, y_train)
 
 y_pred = gnb.predict(X_test)
